@@ -17,6 +17,7 @@ board.on("ready", function() {
       pin: 2, 
       invert: true
   })]; 
+
   let buttonsOrder = [];
   let order = [];
   let LIGHTS_LENGTH = 5
@@ -27,13 +28,14 @@ board.on("ready", function() {
       buttonsOrder.push(index);
       if (buttonsOrder.length === order.length){
         setTimeout(() => {
-        checkWin();
+          checkWin();
         }, 750);
         
         setTimeout(() => {
           playOrder();
         }, 4000);
       }
+      
       leds[index].toggle();
       setTimeout(()=>{
         leds[index].toggle();
